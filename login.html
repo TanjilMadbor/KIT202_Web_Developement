@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="MD ARAFAT HOSSAIN JUNAEAD">
+  <link rel="stylesheet" href="styles.css">
+  <script src="scripts.js" defer></script>
+  <title>Login Page</title>
+</head>
+<body class="login-body">
+
+  <div class="nav-bar">
+    <img src="/images/tourlogo.png" alt="Tour Logo">
+    <img src="/images/red_lace.png" alt="Red Design Logo">
+    <div class="menu">
+      <ul class="nav_list">
+        <li><a href="index.html">Homepage</a></li>
+        <li><a href="older.html">Older Post</a></li>
+        <li><a href="login.html" class="active">Login</a></li>
+        <li><a href="write.html">Write Post</a></li>
+        <li><a href="our_story.html">Our Story</a></li>
+      </ul>
+    </div>
+  </div>
+  
+
+  <div class="login-container">
+    <!-- Left image panel -->
+    <div class="login-image">
+      <img src="images/login_bg.jpg" alt="Travel Image">
+    </div>
+
+    <!-- Login form panel -->
+    <div class="login-form-section">
+      <h2>Log into TravelBlog</h2>
+      <form id="loginForm" novalidate>
+        <label for="username">Username or Email:</label>
+        <input type="text" id="username" name="username">
+
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password">
+
+        <span id="errorMessage" class="error-message" style="display: none;">Please fill out all fields.</span>
+
+        <button type="submit">Log In</button>
+      </form>
+
+      <p class="register-link">Not a member? <a href="registration.html">Register here</a></p>
+    </div>
+  </div>
+</body>
+</html>

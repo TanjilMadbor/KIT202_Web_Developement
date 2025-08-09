@@ -1,2 +1,3 @@
-# KIT202_Web_Developement
-My first assignment for our website
+# a1-group-21
+
+KIT202 Group 21's Assignment 1 repository

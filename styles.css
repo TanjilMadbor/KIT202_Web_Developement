@@ -1,0 +1,688 @@
+/* Styles for Navigation Bar*/
+
+.nav-bar{
+  /* Navbar will be colored and sized*/
+  background-color: #003366; /* Choosing navy blue according to theme*/
+  color:#ffffff; 
+  padding: 20px;               /* Gap between content and border*/
+  font-family:Arial, sans-serif;
+  
+}
+
+.nav-bar img{
+  /* Resizing the navbar image according to our height of navigation bar*/
+
+  height:7em; /* relative size of the navbar for the image*/
+  float:right;  /* Image will stay at the right end in corner*/
+  margin-left: 20px; /* there will be gap beside the picture at the left side*/
+  z-index: 1;      /* Value is 1 so that it will less than the nav-menu's Z-value and it will overlap the image in smaller screen*/
+
+}
+
+.menu{
+  text-align:left;
+}
+.nav_list{
+  position: relative;
+  transition: all 0.3s ease;
+
+}
+.nav_list li{
+  display: inline-block;  /* Make the list elements into a single block*/
+  margin:20px;   /* Gap between list elements*/
+  list-style: none; /* Hide the bullets of list elements*/
+  z-index: 2; /* Greater than the value of navbar image and it will overlap*/
+
+
+}
+.nav_list li a{
+  color:#ffffff; /* Text Color is white*/
+  text-decoration: none; /* Hiding the default underline */
+  background-color: #003366; 
+  border: 1px;
+  border-radius: 10px;
+  padding:4px 6px;
+  text-align: center;
+  font-weight: bold; /* Make the text bold*/
+}
+.nav_list li a:hover{
+  text-decoration: underline;   /* Page name  will be underlined in the navbar when mouse clicked*/
+  background-color: #9cc7f3;
+  color:rgb(6, 63, 249)
+}
+.nav_list li a.active{
+  text-decoration: underline;  /* Current page name  will be underlined in the navbar*/
+
+}
+
+/* -----------------*/
+
+/* Measures for Responsive Navigation Bar*/
+
+
+@media  screen and (max-width:700px){
+ /*When the screen size is 700px or less*/
+
+  .nav_list li{
+      display: inline-block;
+      margin:2px;
+      list-style: none;
+      font-weight: bold;
+      font-size: 10px;
+
+      
+  }
+  .nav_list{
+      display: block;
+      margin: auto;
+
+  }
+  .nav-bar img{
+      height:1.5em;
+  }
+
+}
+@media  screen and (max-width:1300px){
+  /*When the screen size is 1300px or less*/
+
+  .nav_list li{
+      display: inline-block;
+      margin:5px;
+      list-style: none;
+      font-weight: bold;
+      font-size: 70%;
+
+      
+  }
+  .nav_list{
+      display: block;
+      margin: auto;
+
+  }
+  .nav-bar img{
+      height:2.5em;
+  }
+
+}
+
+@media screen and (max-width:500px){
+
+  /*When the screen size is 500px or less*/
+  .nav_list li{
+      display: inline-block;
+      margin:3px;
+      list-style: none;
+      font-weight: bold;
+      font-size: 60%;
+      padding: 0px;
+
+      
+  }
+  
+  .nav-bar img{
+      height:0em;  /*Hiding the image for the smaller screens*/
+  }
+}
+
+
+/* Styles for Body (HomePage)*/
+.post{
+  background-color:#e8f4fc; 
+  border:1px, solid #8ecbf7;
+  margin-bottom: 20px;  /*There will be a gap in the bottom of every post*/
+  padding:20px;
+}
+
+.post h2{
+  color: #0666ab;
+}
+.post-meta p{
+  padding:0px;
+  margin:0px;
+  
+  
+}
+.content-image img{
+  height:40%;
+  width:40%;
+}
+
+/* Styles for See More (Button)  and Postal appearance in Older Post*/
+.button_me{
+  background-color: #87b8e9; 
+  color:#ffffff;
+  padding:15px  30px;
+  border:none;
+  border-radius: 10px;
+  cursor:pointer;
+  font-weight: bold;
+  font-size: 15px;
+}
+.seeMorebtn:hover{
+  background-color: #2c43f4;
+
+}
+
+/* For "See More Button" ---->
+Let,
+ first radio =shownContent
+ Second radio=hiddenContent
+*/
+
+.shownContent,.hiddenContent{
+  display: none;  /*  Intially Hide the radio button*/
+}
+.span-hiddenContent{
+  display: none;  /*Initially Full Paragraph will be hidden*/
+}
+.shownContent:checked~.span-hiddenContent{
+  display:block;   /*when the first radio checked full paragraph will appeared */
+}
+.shownContent:checked~.span-shownContent p {
+  display:none;    /*When the first radio checked short paragraph will be hidden*/
+}
+.hiddenContent:checked~.span-shownContent{
+  display:block;    /*If second radio checked short paragraph will be appeared*/
+}
+.hiddenContent:checked~.span-hiddenContent{
+  display:none       /*If the second radio checked full paragraph will be hidden*/
+}
+/* -------------------------*/
+
+
+
+
+  /* ----------------junaead 007----------------------*/
+  
+  
+  .login-body {
+    background: #f1f5f9; /*soft neutral light grey-blue background */
+    font-family: Arial, sans-serif;
+    margin-block: 0;/*removes vertical browser spacing */
+    padding-block: 0; /*Ensure no top/bottom inner padding*/
+  }
+  
+  .login-container {
+    display: flex;
+   min-height:100dvh;/*Ensures full visible screen height, even on mobile browsers*/
+  }
+  /*left panel for login-hold the image section*/
+  .login-image {
+    flex: 1 1 50%; /* occupies half of the containe space*/
+    background: #003366;/*Deep navy blue background as fallback*/
+    display: flex;/*enable flex to center image */
+    align-items: center;/*center the image Vertically */
+    justify-content: center;/*center the image Horizontally */
+  }
+  
+  .login-image img {
+    inline-size: 100%;/*it makes image stretch acrosss container width*/
+    block-size: 100%;/*full height*/
+    object-fit: cover;/*Ensure image covers area without distortion*/
+  }
+  
+  /*right-side login panel-holds the form element*/
+  .login-form-section {
+    flex: 1 1 50%;/*occupies half of the container width */
+    background: #ffffff;/*we gonna have a Clean white background*/
+    padding: 2.5rem; /* Comfortable inner spacing*/
+    display: flex;/*flex layout to reganize content vertically*/
+    flex-direction: column; /*Stack from elements top to bottom*/
+    justify-content: center; /*Center element vertically within this section*/
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);/*adds soft shadow on the left edge*/
+  }
+  
+  .login-form-section h2 {
+    color: #003366;/*Dark blue*/
+    margin-block-end: 1.25rem; /*Adds spacing below the heading*/
+    text-align: center;
+  }
+  
+  .login-form-section form {
+    display: flex;/*use flex layout for form content*/
+    flex-direction: column;/* puts form inputs in a vertical line*/
+    gap: 1rem /*gives uniform spacing betwwn each field*/
+  }
+  
+  .login-form-section input {
+    padding: 0.625rem;/*Space inside the box*/
+    margin-block-end: 1rem;
+    border: 1px solid #ccc;/*light grey*/
+    
+  }
+  
+  .login-form-section button {
+    padding: 10px;
+    background: #003366;/*Deep blue button*/
+    color: #fff;
+    border: none;
+    cursor: pointer;/*people gonna see hand cursor on hover*/
+    font-weight: 600;
+  }
+  
+  .login-form-section button:hover {
+    background-color: #0055aa;/*Slightly lighter blue */
+  }
+  
+  .error-message {
+    color: #d8000c;/*bright red for visibility*/
+    font-size: 14px;/*small but readable text*/
+    margin-bottom: 10px;/*Adds breathing room below the error*/
+    text-align: center;/*Center-aligns message under inputs*/
+  }
+  
+  input.error {
+    border: 1px solid red;/*Red border if it get validation error*/
+  }
+  
+  .register-link {
+    text-align: center;
+    margin-block-start: 1rem;/*Adds spacing above the register hre line */
+  }
+  
+
+  /* Fix layout for login page only*/
+
+/* Prevent horizontal scrolling and white gaps */
+.login-body {
+    width: 100vw;/*Ensured the body takes up full viewport width*/
+    overflow-x: hidden;/*Hides horizontal scroll caused by overflow*/
+    margin: 0;/*Removes default margin*/
+    padding: 0;/*Removes default padding*/
+    background-color: #f1f5f9;/*Light background consistent with theme*/
+    min-height: 100vh;/*Ensure it takes at least full screen height*/
+  }
+  
+  /* Limit login container width and center it */
+  .login-container {
+    max-width: 1200px;/*linits maximum width to 1200px*/
+    margin: 0 auto;/*centers the container horizontally*/
+    width: 100%;/*makes container responsive on smaller screen */
+  }
+  
+  /* Fix image sizing for login */
+  .login-image img {
+    width: 100%;/*makes image fill the container width*/
+    height: 100%;/*makes image fill the container height*/
+    object-fit: cover;/*ensures image covers space without stretching*/
+    min-height: 100%;/*ensure image does not collapse on smaller screen*/
+  }
+  
+  
+  /* ---------------- Sign Up Page---------------- */
+  .signup-body {
+    background-color: #f1f5f9;/*soft light blue-gray background*/
+    font-family: Arial, sans-serif;/*clean and simple font*/
+    margin: 0;/*remove default spacing*/
+    padding-block:0;/*remove top/bottom spacing*/
+    min-height:100vh;/*take full screen height*/
+  }
+  
+  .signup-container {
+    display: flex;/*enable flexbox layout*/
+    min-height: 100vh;/*full screen height*/
+    color: #ccc;
+  }
+  
+  .signup-form-box {
+    background: #ffffff;/*plain white backdrop*/
+    border: 2px solid #0077cc;/*Light blue*/
+    border-radius: 10px;/*soft rounded corners*/
+    padding: 2rem; /* Internal spacing for content comfort */
+    width: 390px;/*fixed width for consistent layout*/
+    text-align: center;/*center all text element*/
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);/*light shawod for*/
+  }
+  
+  .signup-form-box h2 {
+    color: #003366;
+    margin-block-end: 1.25rem;
+  }
+  
+  .signup-form-box label {
+    text-align: left;/*align text to the left for clearity*/
+    display: block;/*makes each label take up its own line*/
+    margin-top: 1rem;/*adds space before each lable*/
+    font-weight: 600;/*Adding softer boldness for balance*/
+  }
+  
+  .signup-form-box input {
+    width: 100%; /*stretch input to full container width*/
+    padding: 10px;/*inner spacing for better touch targets*/
+    margin-top: 5px;/*small space above input*/
+    margin-bottom: 10px;/*space below input*/
+    box-sizing: border-box; /*includes padding*/
+    border: 1px solid #ccc; /*light gray border for subtle styling*/
+    border-radius: 5px;/*slightly rounded corners*/
+  }
+  
+  .signup-form-box button {
+    inline-size: 100%;
+    padding: 10px;
+    margin-top: 10px;/*gap above button*/
+    border: 0;/*remove default border*/
+    background: #003366;/*deep navy background*/
+    color: #fff;/*text colour*/
+    cursor: pointer;/*show pointer on hover*/
+    border-radius:0.3125rem;/*for a softer look*/
+  }
+  
+  .signup-form-box button:hover {
+    background-color: #0055aa;
+  }
+  
+  .signup-bottom-image img {
+    margin-block-start: 1.875rem;
+    inline-size: 100%;
+    block-size: auto;/*It maintain aspect ratio*/
+    border-radius: 10px;
+  }
+  
+  .field-error {
+    color: #d8000c;/*Strong red*/
+    font-size:0.8125rem;
+    margin-block-start: 0.3125rem;
+  }
+  
+  /* Left image panel (new addition like login page) */
+  .signup-image {
+    flex: 1 1 50%;/*occupies half the container width*/
+    background-color:#0055aa;/*fallback colour in case image dose not load*/
+    display: flex;
+    align-items: center;/*vertically center image*/
+    justify-content: center;/*horizontally center image*/
+  }
+  
+  /* Make the signup image scale properly */
+  .signup-image img {
+    width: 100%;/*stretch image to full container width*/
+    height: 100%;/*stretch image to full container height*/
+    object-fit: cover;/*crop and scale image without distortion*/
+  }
+  
+  /* Right form section to match login layout */
+  .signup-form-section {
+    flex: 1 1 50%;/*occupy half the horizontal space*/
+    background: #ffffff;/*white background for clean form area*/
+    padding: 2.5rem;/*space inside for comfortable spacing*/
+    display: flex;/*enables flex layout*/
+    flex-direction: column;/*stack form elements vertically*/
+    justify-content: center;/*center the form vertically*/
+    box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);/*soft left shadow*/
+  }
+  
+  .signup-form-section form {
+    display: flex;/*uses flexbox for layout*/
+    flex-direction: column;/*stack inputs and buttons vertically*/
+    gap: 1rem; /* adds spacing between inputs/buttons */
+  }
+  
+  .signup-form-section input {
+    padding: 10px;/*add inner space for readability*/
+    border: 1px solid #ccc;/*light grey border for subtle styling*/
+    border-radius: 5px;/*rounded corners for a softer look*/
+  }
+  
+  .signup-form-section button {
+    padding: 10px;/*space inside button for comfort*/
+    background-color: #003366;/*deep blue background*/
+    color: white;/*white text for contrast*/
+    border: none;/*remove default browser border*/
+    cursor: pointer;/*shows pointer cursor on hover*/
+    border-radius: 5px;/*slightly rounded corneres */
+  }
+  
+  .signup-form-section button:hover {
+    background-color: #0055aa;/*light blue on hover for interactivity*/
+  }
+  
+
+  /* Fix layout for registration page only */
+
+/* Prevent horizontal scrolling and white gaps */
+.signup-body {
+    width: 100vw; /* Ensures the body takes up full viewport width */
+    overflow-x: hidden;/*prevents horizontal scrolling*/
+    margin: 0;/*removes default margin*/
+    padding: 0;/*removes default padding*/
+    background-color: #f1f5f9;/*soft background for consistency*/
+    min-height: 100vh;/*fills full height of the viewpoint*/
+  }
+  
+  /* Limit registration container width and center it */
+  .signup-container {
+    max-width: 1200px;/*restricts maximum width to maintain clean layout*/
+    margin: 0 auto;/*enters the container*/
+    width: 100%;/*makes it fully responsive*/
+  }
+  
+  /* Fix image sizing for registration */
+  .signup-image img {
+    width: 100%;/*image fills the width*/
+    height: 100%;/*image fills the height*/
+    object-fit: cover;/*ensure image maintains aspect ratio*/
+    min-height: 100%;/*prevent image from shrinking too small*/
+  }
+  
+  
+
+/*
+  ==========PERSONALIZED OUR STORY PAGE=============*/
+  
+
+/* Container for the About section */
+.about-container {
+    background-color: #fff;       /* A white background creates a neat uncomplicated appearance */
+                /* For improved reading.the maximum width restrict the line length*/
+    margin: 3rem auto;            /* Centers horizontally and adds vertical space*/
+    padding: 2rem;                /* gives enough room between the borders of the container and the content */
+    border-radius: 12px;          /* 12px radius rounded edges door a more gentle look*/ /* gives the container a faint drop shadow to make it stand out*/
+  }
+  
+  .about-container h1 {
+    font-size: 2.2rem;           /* increase font size to indicate the heading importance */
+    color: #0666ab;              /* for readability and striking contrast,use a dark blue hue */
+    margin-bottom: 1rem;         /* leaving space benath the headline to keep it apart from the text that follows*/
+  }
+  
+  .about-container h2 {
+    font-size: 1.5rem;           /* to estbalish hierarchy, it should be marginally smaller than the primary heading*/
+    margin-top: 2rem;            /* Above,there should be a clear divison from the preceding sections */
+    color: #0666ab;              /* less intence blue to contrast with the h1 element */
+  }
+  
+  .about-container p {
+    font-size: 1.5rem;              /*Using  a standard text size makes it easier to read*/
+    line-height: 1.7;            /* Line spacing has been increased for more comfotbale screen reading */
+    margin-top: 1rem;            /* use the top margin to apprropriatley seperate paraghraps from other components*/
+  }
+  
+  .about-container ul {
+    list-style: none;            /* vanish the standard bullet points to make the design cleaner */
+
+    padding: 0;                 /*enables spacing control by removing the default padding*/
+  }
+  
+  .about-container li {
+    margin: 0.5rem 0;            /* allows for 0.5 rem of veertica; space between list items at the top bottom */
+  }
+  
+  .about-container a {
+    color: #037dd4;              /* Connecta links to familiar shade of blue */
+    text-decoration: none;       /* eliminates the underlining for a simple first appearance */
+  }
+  .about-container a:hover {
+    text-decoration: underline;  /* adds a hovering underline to show clickability */
+    color: rgb(6, 63, 249);       /* shifts to more vivid shade of blue to emphasize the hover status */
+  }
+
+
+
+  
+  /* 
+     =========MEMBERS CARD SECTION=======
+     */
+  .members-container {
+    display: flex;               /*permits a felxible container for a card layout that is reponsive */
+    flex-wrap: wrap;             /* on smaller screen,it enable cards tpo wrap onto a new line */
+    gap: 1rem;                   /*for uniform spacing leave a uniform 1 rem gap between each card*/
+    margin-top: 1rem;            /*Adds space to the card containers top*/
+  }
+  
+  .member-box {
+    background-color: #9cc7f3;/*blue background that constrats with the text*/
+    padding: 1rem;               /* this padding is here to mske sure that the text dosent touch the border*/
+    border-radius: 10px;         /*gentle round corner for a decent look*/
+    flex: 1 1 250px;             /*this flex make sure that cards are responsive with his minimum width of 250px*/
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);  /*the shadow effect adds depth without making any changes*/
+    transition: transform 0.3s ease; /* hover make the tranision smooth */
+    text-align: center;              /*make sure that the text  is align in the box*/
+    font-weight: 16px;               /*used semi bold text higilight the cards contents*/
+    color: #003366;              /*always match the color of the text with the heaading*/
+  }
+  
+  .member-box:hover {
+    transform: translateY(-5px); /* this transformation gives a dynamic feel*/
+    background-color: #e6f2ff;    /* background color lightuos when you take a cursor to hover */
+  }
+
+
+  
+  /* 
+     ======CREATE A POST PAGE======
+     */
+  .post-container {
+    max-width: 600px;   /*the max width tomake the form focused*/
+    margin: 3rem auto;  /*manage the  vertical margin and center form*/
+    padding: 2rem;      /* internal space to keep the text look neat and clean*/
+    background-color: #ffffff; /* white to leave a standard look*/
+    border-radius: 12px;           /* conatiners is rounded to make the degin consistent*/
+    box-shadow: 0 6px 20px rgba(0, 51, 102, 0.1);  /*shadow to give the container a depth loolk*/
+  }
+  
+  .post-container h1 {        
+    font-size: 1.8rem;        /*makes a smaller heading which is suitable for the form*/
+    margin-bottom: 2rem;      /**create a pace between the form and the heading*/
+    color: #0666ab;        /* consistent blue to  make branding*/
+    text-align: center;      /*keep theheading centered to have a a balance look*/
+  }
+  .team-content p{
+    margin:0;
+  }
+
+
+
+  
+  /* ====FORM ELEMENTS=======*/
+  form label {
+    display: block;        /*every label is assigned a line and made a block-level element*/
+    font-weight: bold;      /*bold design makes it easy to distinguish between labels and form fields*/
+    margin-bottom: 0.5rem;   /*a small area underneath the label*/
+    color: #003366;        /*keeps the color scheme consistent by using the shade of dark blu*/
+  }
+  
+  form input[type="text"],
+  form textarea {
+    width: 100%;
+    max-width: 100%;
+    padding: 12px 16px;
+    border-radius: 8px;
+    border: 1px solid #037dd4;
+    background-color: #f9f9f9;
+    font-size: 1rem;
+    color: #003366;
+    resize: vertical;
+    box-sizing: border-box;
+    margin-bottom: 1.5rem;
+  }
+  
+  form textarea {
+    min-height: 120px;
+    max-height: 300px;
+  }
+  
+  form input:focus,
+  form textarea:focus {
+    outline: none;
+    border-color: #0666ab;
+    background-color: #ffffff;
+  }
+  
+  /* Style for error messages (hidden by default) */
+  .error-message {
+    color: red;
+    font-weight: bold;
+    display: none;
+    margin-bottom: 1rem;
+  }
+
+
+
+
+
+  
+  /* =====BUTTON====*/
+  form button {
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-weight: bold;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #003366;
+    color: white;
+    border: none;
+    transition: background-color 0.3s ease;
+    margin-right: 1rem;
+    min-width: 120px;
+  }
+  
+  form button:hover {
+    background-color: #037dd4;
+    /*When hovered over, the button's color lightens for feedback*/
+  }
+  
+  form button[type="reset"] {
+    background-color: #ccc;     /*The background color of reset buttons is neutral*/
+    color: #003366;             /*aligns the color of the text with the overall theme*/
+  }
+  form button[type="reset"]:hover {
+    background-color: #bbb;  /*Hovering makes it a little darker to signify interaction*/
+  }
+
+
+
+  
+  
+  /* =======RESPONSIVE ADJUSMENTS====== */
+  @media (max-width: 600px) {
+    /*The post container is adapted for small displays*/
+    .post-container {
+      margin: 1.5rem 1rem;    /*resize the margin makke a better user experince*/
+      padding: 1rem;         /*reduces internal softness in order to maintain proportion*/
+    }
+    /*makes buttons on mobile devices full width*/
+  
+    form button {
+      width: 100%;   /*increased touch-friendliness with full length*/
+      margin-bottom: 1rem;   /* buttons that are separated vertically*/
+    }
+    /*vertically stacks member cards on small screens*/
+  
+    .members-container {
+      flex-direction: column; /* makes certain that the member cards are displayed one above the other*/
+    }
+
+    /*modifies the layout of the navigation for mobile devices*/
+  
+    .nav-bar {
+      flex-direction: column;     /*arranges navigation items in a vertical stack*/
+      align-items: center;    /*Horizontally centers the navigation items*/
+    }
+  /*   Modifications to individual navigation list items*/ 
+
+    .nav_list li {
+      display: block;    /*makes every navigation item take up a separate line*/
+      margin: 10px 0;  /* enables touch comfort by adding space between navigation objects*/
+    }
+  }
+  
